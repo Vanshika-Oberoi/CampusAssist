@@ -1,6 +1,6 @@
 # CampusAssist Data Dictionary
 
-This document describes the fields used in the raw, cleaned, chunked and evaluation datasets of the CampusAssist project.
+This document describes the fields used in the raw, cleaned, chunked, feature-engineered and evaluation datasets of the CampusAssist project.
 
 ## Raw Document Metadata
 
@@ -57,6 +57,26 @@ Learning outcomes:
 | chunk_index | int64 | Position of the chunk within its original document. | 1 |
 | content | object | Cleaned text content of the document or text chunk. | Course: Introduction to Data Science This course introduces students to the fundamentals of data science. Students learn how to collect, organize, clean, analyse and interpret data. Main topics include Python programming, data types, statistics, data visualization and exploratory data analysis. Learning outcomes: 1. Understand basic data science concepts. 2. Work with structured datasets. 3. Perform basic data cleaning. 4. Create charts and interpret findings. |
 | word_count | int64 | Number of words in the document or chunk. | 64 |
+
+## Feature-Engineered Chunks
+
+**Dataset file:** `data/processed/feature_engineered_chunks.csv`
+
+| Column | Data Type | Description | Example |
+|---|---|---|---|
+| document_id | object | Unique identifier assigned to each source document. | DOC001 |
+| chunk_id | object | Unique identifier assigned to a text chunk. | DOC001_C01 |
+| title | object | Title or name of the source document. | Introduction to Data Science |
+| category | object | Document category, such as course guides, policies, FAQs or assignment instructions. | course_guides |
+| source_type | object | Indicates whether the document is synthetic or comes from another source. | synthetic |
+| chunk_index | int64 | Position of the chunk within its original document. | 1 |
+| content | object | Cleaned text content of the document or text chunk. | Course: Introduction to Data Science This course introduces students to the fundamentals of data science. Students learn how to collect, organize, clean, analyse and interpret data. Main topics include Python programming, data types, statistics, data visualization and exploratory data analysis. Learning outcomes: 1. Understand basic data science concepts. 2. Work with structured datasets. 3. Perform basic data cleaning. 4. Create charts and interpret findings. |
+| word_count | int64 | Number of words in the document or chunk. | 64 |
+| character_count | int64 | Total number of characters in the text chunk. | 464 |
+| sentence_count | int64 | Number of sentences identified in the text chunk. | 11 |
+| avg_word_length | float64 | Average number of characters per word in the text chunk. | 5.97 |
+| has_question | bool | Boolean indicator showing whether the text chunk contains a question mark. | False |
+| has_number | bool | Boolean indicator showing whether the text chunk contains at least one numeric digit. | True |
 
 ## Evaluation Questions
 

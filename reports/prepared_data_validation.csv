@@ -12,3 +12,10 @@ Unique evaluation question IDs,PASS,15,Every evaluation question should have a u
 Evaluation source document references,PASS,0,Every answerable question should reference an existing document ID.
 Unanswerable question source IDs,PASS,0,Unanswerable questions should not be assigned a supporting document.
 Evaluation question completeness,PASS,0,"Questions, reference answers and expected behaviors should be present."
+Feature-engineered chunk coverage,PASS,12 feature chunk IDs / 12 original chunks,Every original chunk should have exactly one feature-engineered record.
+Required engineered features,PASS,5,All five engineered feature columns should exist.
+Feature-engineered dataset missing values,PASS,0,The feature-engineered dataset should not contain missing values.
+Character count consistency,PASS,0,Character counts should match the actual text length.
+Sentence count consistency,PASS,0,Sentence counts should match the punctuation-based calculation.
+Average word length consistency,PASS,0,Average word length should match the calculated text values.
+Boolean feature consistency,PASS,0,Question and number indicators should match the actual text.

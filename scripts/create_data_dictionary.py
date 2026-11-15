@@ -6,15 +6,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = BASE_DIR / "data_dictionary"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Datasets included in the CampusAssist project
+# All datasets included in CampusAssist
 datasets = {
     "Raw Document Metadata": "data/raw/document_metadata.csv",
     "Cleaned Documents": "data/processed/cleaned_documents.csv",
     "Document Chunks": "data/chunks/document_chunks.csv",
+    "Feature-Engineered Chunks": "data/processed/feature_engineered_chunks.csv",
     "Evaluation Questions": "data/evaluation/test_questions.csv"
 }
 
-# Description of every dataset column
+# Description of dataset columns
 descriptions = {
     "document_id": "Unique identifier assigned to each source document.",
     "title": "Title or name of the source document.",
@@ -28,6 +29,11 @@ descriptions = {
     "word_count": "Number of words in the document or chunk.",
     "chunk_id": "Unique identifier assigned to a text chunk.",
     "chunk_index": "Position of the chunk within its original document.",
+    "character_count": "Total number of characters in the text chunk.",
+    "sentence_count": "Number of sentences identified in the text chunk.",
+    "avg_word_length": "Average number of characters per word in the text chunk.",
+    "has_question": "Boolean indicator showing whether the text chunk contains a question mark.",
+    "has_number": "Boolean indicator showing whether the text chunk contains at least one numeric digit.",
     "question_id": "Unique identifier assigned to an evaluation question.",
     "question": "Student question used to test the CampusAssist system.",
     "expected_answer": "Reference answer used to evaluate the system's response.",
@@ -39,8 +45,13 @@ descriptions = {
 
 dictionary_rows = []
 
+# Read each dataset and document its columns
 for dataset_name, relative_path in datasets.items():
     file_path = BASE_DIR / relative_path
+
+    if not file_path.exists():
+        raise FileNotFoundError(f"Dataset not found: {file_path}")
+
     df = pd.read_csv(file_path)
 
     for column in df.columns:
@@ -52,27 +63,33 @@ for dataset_name, relative_path in datasets.items():
             "dataset_file": relative_path,
             "column_name": column,
             "data_type": str(df[column].dtype),
-            "description": descriptions.get(column, "Description not yet provided."),
+            "description": descriptions.get(
+                column, "Description not yet provided."
+            ),
             "example_value": example
         })
 
 # Create the data dictionary CSV
 dictionary_df = pd.DataFrame(dictionary_rows)
+
 csv_path = OUTPUT_DIR / "data_dictionary.csv"
 dictionary_df.to_csv(csv_path, index=False)
 
-# Create readable Markdown documentation
+# Create Markdown documentation
 md_path = OUTPUT_DIR / "data_dictionary.md"
 
 with open(md_path, "w", encoding="utf-8") as file:
     file.write("# CampusAssist Data Dictionary\n\n")
     file.write(
         "This document describes the fields used in the raw, cleaned, "
-        "chunked and evaluation datasets of the CampusAssist project.\n\n"
+        "chunked, feature-engineered and evaluation datasets "
+        "of the CampusAssist project.\n\n"
     )
 
     for dataset_name, relative_path in datasets.items():
-        subset = dictionary_df[dictionary_df["dataset_name"] == dataset_name]
+        subset = dictionary_df[
+            dictionary_df["dataset_name"] == dataset_name
+        ]
 
         file.write(f"## {dataset_name}\n\n")
         file.write(f"**Dataset file:** `{relative_path}`\n\n")
@@ -82,6 +99,7 @@ with open(md_path, "w", encoding="utf-8") as file:
         for _, row in subset.iterrows():
             description = str(row["description"]).replace("|", "\\|")
             example = str(row["example_value"]).replace("|", "\\|")
+
             file.write(
                 f"| {row['column_name']} | {row['data_type']} "
                 f"| {description} | {example} |\n"
@@ -93,7 +111,9 @@ print("CAMPUSASSIST DATA DICTIONARY")
 print("============================")
 print(f"Datasets documented: {len(datasets)}")
 print(f"Total columns documented: {len(dictionary_df)}")
+
 print("\nGenerated files:")
 print(csv_path)
 print(md_path)
+
 print("\nData dictionary created successfully!")

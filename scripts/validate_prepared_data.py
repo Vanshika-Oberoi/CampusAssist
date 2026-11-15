@@ -1,5 +1,6 @@
 
 import pandas as pd
+import re
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,8 +12,12 @@ metadata = pd.read_csv(BASE_DIR / "data/raw/document_metadata.csv")
 cleaned = pd.read_csv(BASE_DIR / "data/processed/cleaned_documents.csv")
 chunks = pd.read_csv(BASE_DIR / "data/chunks/document_chunks.csv")
 evaluation = pd.read_csv(BASE_DIR / "data/evaluation/test_questions.csv")
+features = pd.read_csv(
+    BASE_DIR / "data/processed/feature_engineered_chunks.csv"
+)
 
 results = []
+
 
 def add_check(name, passed, observed, details):
     results.append({
@@ -21,6 +26,7 @@ def add_check(name, passed, observed, details):
         "observed_result": observed,
         "details": details
     })
+
 
 # 1. Document ID uniqueness
 add_check(
@@ -40,6 +46,7 @@ add_check(
 
 # 3. Metadata completeness
 missing_metadata = int(metadata.isnull().sum().sum())
+
 add_check(
     "Missing metadata values",
     missing_metadata == 0,
@@ -179,8 +186,147 @@ add_check(
     "Questions, reference answers and expected behaviors should be present."
 )
 
+
+# ------------------------------------------------
+# FEATURE ENGINEERING VALIDATION - CHECKS 14 TO 20
+# ------------------------------------------------
+
+# 14. Feature-engineered chunk coverage
+feature_chunk_ids = set(features["chunk_id"].dropna())
+
+add_check(
+    "Feature-engineered chunk coverage",
+    feature_chunk_ids == set(chunks["chunk_id"].dropna())
+    and len(features) == len(chunks),
+    f"{len(feature_chunk_ids)} feature chunk IDs / {len(chunks)} original chunks",
+    "Every original chunk should have exactly one feature-engineered record."
+)
+
+# 15. Required engineered columns
+required_features = [
+    "character_count",
+    "sentence_count",
+    "avg_word_length",
+    "has_question",
+    "has_number"
+]
+
+missing_features = [
+    column for column in required_features
+    if column not in features.columns
+]
+
+add_check(
+    "Required engineered features",
+    len(missing_features) == 0,
+    len(required_features) - len(missing_features),
+    "All five engineered feature columns should exist."
+)
+
+# 16. Missing values in feature-engineered dataset
+feature_missing_values = int(features.isnull().sum().sum())
+
+add_check(
+    "Feature-engineered dataset missing values",
+    feature_missing_values == 0,
+    feature_missing_values,
+    "The feature-engineered dataset should not contain missing values."
+)
+
+# 17. Character count consistency
+actual_char_counts = features["content"].astype(str).apply(len)
+stored_char_counts = pd.to_numeric(
+    features["character_count"], errors="coerce"
+)
+
+char_errors = int(
+    (actual_char_counts != stored_char_counts).sum()
+)
+
+add_check(
+    "Character count consistency",
+    char_errors == 0,
+    char_errors,
+    "Character counts should match the actual text length."
+)
+
+# 18. Sentence count consistency
+def count_sentences(text):
+    sentences = re.split(r"[.!?]+", str(text))
+    return len([sentence for sentence in sentences if sentence.strip()])
+
+
+actual_sentence_counts = features["content"].apply(count_sentences)
+stored_sentence_counts = pd.to_numeric(
+    features["sentence_count"], errors="coerce"
+)
+
+sentence_errors = int(
+    (actual_sentence_counts != stored_sentence_counts).sum()
+)
+
+add_check(
+    "Sentence count consistency",
+    sentence_errors == 0,
+    sentence_errors,
+    "Sentence counts should match the punctuation-based calculation."
+)
+
+# 19. Average word length consistency
+def calculate_average_word_length(text):
+    words = re.findall(r"\b\w+\b", str(text))
+    if not words:
+        return 0
+    return round(sum(len(word) for word in words) / len(words), 2)
+
+
+actual_avg_lengths = features["content"].apply(
+    calculate_average_word_length
+)
+
+stored_avg_lengths = pd.to_numeric(
+    features["avg_word_length"], errors="coerce"
+)
+
+avg_length_errors = int(
+    (actual_avg_lengths != stored_avg_lengths).sum()
+)
+
+add_check(
+    "Average word length consistency",
+    avg_length_errors == 0,
+    avg_length_errors,
+    "Average word length should match the calculated text values."
+)
+
+# 20. Boolean feature consistency
+expected_questions = features["content"].astype(str).str.contains(
+    r"\?", regex=True
+)
+
+expected_numbers = features["content"].astype(str).str.contains(
+    r"\d", regex=True
+)
+
+actual_questions = features["has_question"].astype(str).str.lower().eq("true")
+actual_numbers = features["has_number"].astype(str).str.lower().eq("true")
+
+boolean_errors = int(
+    (expected_questions != actual_questions).sum()
+    + (expected_numbers != actual_numbers).sum()
+)
+
+add_check(
+    "Boolean feature consistency",
+    boolean_errors == 0,
+    boolean_errors,
+    "Question and number indicators should match the actual text."
+)
+
+
 # Save validation report
 report = pd.DataFrame(results)
+
 output_file = REPORT_DIR / "prepared_data_validation.csv"
 report.to_csv(output_file, index=False)
 
