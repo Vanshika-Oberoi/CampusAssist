@@ -1,0 +1,9 @@
+Course: Database Management Fundamentals
+
+This course explains how databases store and organize information.
+
+Topics include relational databases, SQL queries, primary keys,
+foreign keys, normalization and database transactions.
+
+Students learn to create tables, retrieve records and understand
+the importance of data integrity.

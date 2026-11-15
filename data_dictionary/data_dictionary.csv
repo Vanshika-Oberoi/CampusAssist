@@ -1,0 +1,43 @@
+dataset_name,dataset_file,column_name,data_type,description,example_value
+Raw Document Metadata,data/raw/document_metadata.csv,document_id,object,Unique identifier assigned to each source document.,DOC001
+Raw Document Metadata,data/raw/document_metadata.csv,title,object,Title or name of the source document.,Introduction to Data Science
+Raw Document Metadata,data/raw/document_metadata.csv,category,object,"Document category, such as course guides, policies, FAQs or assignment instructions.",course_guides
+Raw Document Metadata,data/raw/document_metadata.csv,file_name,object,Original filename of the source text document.,introduction_to_data_science.txt
+Raw Document Metadata,data/raw/document_metadata.csv,source_type,object,Indicates whether the document is synthetic or comes from another source.,synthetic
+Raw Document Metadata,data/raw/document_metadata.csv,source_reference,object,Description of where the original document came from.,Created for CampusAssist project
+Raw Document Metadata,data/raw/document_metadata.csv,collection_date,object,Date when the document was added to the project dataset.,2026-11-14
+Raw Document Metadata,data/raw/document_metadata.csv,format,object,Original file format of the document.,TXT
+Cleaned Documents,data/processed/cleaned_documents.csv,document_id,object,Unique identifier assigned to each source document.,DOC001
+Cleaned Documents,data/processed/cleaned_documents.csv,title,object,Title or name of the source document.,Introduction to Data Science
+Cleaned Documents,data/processed/cleaned_documents.csv,category,object,"Document category, such as course guides, policies, FAQs or assignment instructions.",course_guides
+Cleaned Documents,data/processed/cleaned_documents.csv,file_name,object,Original filename of the source text document.,introduction_to_data_science.txt
+Cleaned Documents,data/processed/cleaned_documents.csv,source_type,object,Indicates whether the document is synthetic or comes from another source.,synthetic
+Cleaned Documents,data/processed/cleaned_documents.csv,content,object,Cleaned text content of the document or text chunk.,"Course: Introduction to Data Science
+
+This course introduces students to the fundamentals of data science.
+Students learn how to collect, organize, clean, analyse and interpret data.
+
+Main topics include Python programming, data types, statistics,
+data visualization and exploratory data analysis.
+
+Learning outcomes:
+1. Understand basic data science concepts.
+2. Work with structured datasets.
+3. Perform basic data cleaning.
+4. Create charts and interpret findings."
+Cleaned Documents,data/processed/cleaned_documents.csv,word_count,int64,Number of words in the document or chunk.,64
+Document Chunks,data/chunks/document_chunks.csv,document_id,object,Unique identifier assigned to each source document.,DOC001
+Document Chunks,data/chunks/document_chunks.csv,chunk_id,object,Unique identifier assigned to a text chunk.,DOC001_C01
+Document Chunks,data/chunks/document_chunks.csv,title,object,Title or name of the source document.,Introduction to Data Science
+Document Chunks,data/chunks/document_chunks.csv,category,object,"Document category, such as course guides, policies, FAQs or assignment instructions.",course_guides
+Document Chunks,data/chunks/document_chunks.csv,source_type,object,Indicates whether the document is synthetic or comes from another source.,synthetic
+Document Chunks,data/chunks/document_chunks.csv,chunk_index,int64,Position of the chunk within its original document.,1
+Document Chunks,data/chunks/document_chunks.csv,content,object,Cleaned text content of the document or text chunk.,"Course: Introduction to Data Science This course introduces students to the fundamentals of data science. Students learn how to collect, organize, clean, analyse and interpret data. Main topics include Python programming, data types, statistics, data visualization and exploratory data analysis. Learning outcomes: 1. Understand basic data science concepts. 2. Work with structured datasets. 3. Perform basic data cleaning. 4. Create charts and interpret findings."
+Document Chunks,data/chunks/document_chunks.csv,word_count,int64,Number of words in the document or chunk.,64
+Evaluation Questions,data/evaluation/test_questions.csv,question_id,object,Unique identifier assigned to an evaluation question.,Q001
+Evaluation Questions,data/evaluation/test_questions.csv,question,object,Student question used to test the CampusAssist system.,What topics are covered in the Introduction to Data Science course?
+Evaluation Questions,data/evaluation/test_questions.csv,expected_answer,object,Reference answer used to evaluate the system's response.,"The course covers Python programming, data types, statistics, data visualization, data collection, data cleaning and exploratory data analysis."
+Evaluation Questions,data/evaluation/test_questions.csv,is_answerable,bool,Boolean indicator showing whether the dataset contains enough information to answer the question.,True
+Evaluation Questions,data/evaluation/test_questions.csv,expected_behavior,object,Expected system behavior when responding to the evaluation question.,Answer using the course guide.
+Evaluation Questions,data/evaluation/test_questions.csv,expected_document_id,object,Document ID expected to support the answer. Empty when the question is unanswerable.,DOC001
+Evaluation Questions,data/evaluation/test_questions.csv,expected_category,object,Expected category of the supporting document. Empty when the question is unanswerable.,course_guides

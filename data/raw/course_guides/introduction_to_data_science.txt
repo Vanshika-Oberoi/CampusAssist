@@ -1,0 +1,13 @@
+Course: Introduction to Data Science
+
+This course introduces students to the fundamentals of data science.
+Students learn how to collect, organize, clean, analyse and interpret data.
+
+Main topics include Python programming, data types, statistics,
+data visualization and exploratory data analysis.
+
+Learning outcomes:
+1. Understand basic data science concepts.
+2. Work with structured datasets.
+3. Perform basic data cleaning.
+4. Create charts and interpret findings.

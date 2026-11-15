@@ -1,0 +1,5 @@
+category,document_count,average_words,minimum_words,maximum_words
+assignment_instructions,3,53.0,48,57
+course_guides,3,50.333333333333336,41,64
+policies,3,47.333333333333336,43,52
+student_faqs,3,48.666666666666664,40,55

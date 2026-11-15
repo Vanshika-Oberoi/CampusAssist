@@ -1,0 +1,10 @@
+Question: What is exploratory data analysis?
+
+Answer: Exploratory data analysis, also called EDA, is the
+process of examining a dataset to understand its structure,
+quality, distributions and relationships.
+
+Question: Which tools can be used?
+
+Answer: Python libraries such as Pandas, Matplotlib and
+Seaborn are commonly used for data analysis and visualization.

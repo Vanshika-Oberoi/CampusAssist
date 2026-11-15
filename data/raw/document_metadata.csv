@@ -1,0 +1,13 @@
+document_id,title,category,file_name,source_type,source_reference,collection_date,format
+DOC001,Introduction to Data Science,course_guides,introduction_to_data_science.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC002,Introduction to Artificial Intelligence,course_guides,introduction_to_ai.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC003,Database Management Fundamentals,course_guides,database_fundamentals.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC004,Data Science Assignment Guidelines,assignment_instructions,data_science_assignment.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC005,AI Project Submission Instructions,assignment_instructions,ai_project_submission.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC006,Presentation Submission Guide,assignment_instructions,presentation_submission.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC007,How should I submit an assignment?,student_faqs,assignment_submission_faq.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC008,What should a project report contain?,student_faqs,project_report_faq.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC009,What is exploratory data analysis?,student_faqs,eda_faq.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC010,Academic Integrity Guidelines,policies,academic_integrity.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC011,Sample Assignment Extension Guidelines,policies,assignment_extension.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT
+DOC012,Sample Student Support Guidelines,policies,student_support.txt,synthetic,Created for CampusAssist project,2026-11-14,TXT

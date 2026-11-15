@@ -1,0 +1,13 @@
+file_name,category,word_count,is_empty,has_sufficient_content,is_duplicate,missing_metadata,missing_metadata_fields,readable
+ai_project_submission.txt,assignment_instructions,54,False,True,False,False,,True
+data_science_assignment.txt,assignment_instructions,57,False,True,False,False,,True
+presentation_submission.txt,assignment_instructions,48,False,True,False,False,,True
+project_report_faq.txt,student_faqs,40,False,True,False,False,,True
+eda_faq.txt,student_faqs,51,False,True,False,False,,True
+assignment_submission_faq.txt,student_faqs,55,False,True,False,False,,True
+academic_integrity.txt,policies,48,False,True,False,False,,True
+assignment_extension.txt,policies,53,False,True,False,False,,True
+student_support.txt,policies,43,False,True,False,False,,True
+introduction_to_data_science.txt,course_guides,64,False,True,False,False,,True
+introduction_to_ai.txt,course_guides,46,False,True,False,False,,True
+database_fundamentals.txt,course_guides,41,False,True,False,False,,True

@@ -1,0 +1,14 @@
+Assignment: Project Presentation
+
+Students must prepare a presentation describing their project.
+
+Suggested sections include:
+1. Project introduction.
+2. Problem statement.
+3. Objectives.
+4. Proposed solution.
+5. Technology and methodology.
+6. Results and conclusions.
+
+Slides should be readable and information should be presented
+in a clear and organized manner.

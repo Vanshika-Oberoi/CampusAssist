@@ -1,0 +1,122 @@
+[
+    {
+        "document_id": "DOC001",
+        "chunk_id": "DOC001_C01",
+        "title": "Introduction to Data Science",
+        "category": "course_guides",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Course: Introduction to Data Science This course introduces students to the fundamentals of data science. Students learn how to collect, organize, clean, analyse and interpret data. Main topics include Python programming, data types, statistics, data visualization and exploratory data analysis. Learning outcomes: 1. Understand basic data science concepts. 2. Work with structured datasets. 3. Perform basic data cleaning. 4. Create charts and interpret findings.",
+        "word_count": 64
+    },
+    {
+        "document_id": "DOC002",
+        "chunk_id": "DOC002_C01",
+        "title": "Introduction to Artificial Intelligence",
+        "category": "course_guides",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Course: Introduction to Artificial Intelligence This course introduces artificial intelligence concepts and applications. Topics include machine learning, neural networks, natural language processing, computer vision and responsible AI. Students explore how AI systems learn from data and how they can be evaluated for accuracy, reliability and fairness.",
+        "word_count": 46
+    },
+    {
+        "document_id": "DOC003",
+        "chunk_id": "DOC003_C01",
+        "title": "Database Management Fundamentals",
+        "category": "course_guides",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Course: Database Management Fundamentals This course explains how databases store and organize information. Topics include relational databases, SQL queries, primary keys, foreign keys, normalization and database transactions. Students learn to create tables, retrieve records and understand the importance of data integrity.",
+        "word_count": 41
+    },
+    {
+        "document_id": "DOC004",
+        "chunk_id": "DOC004_C01",
+        "title": "Data Science Assignment Guidelines",
+        "category": "assignment_instructions",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Assignment: Data Science Analysis Students must select a suitable dataset and perform exploratory data analysis. Required activities: 1. Describe the dataset and its source. 2. Identify missing and duplicate values. 3. Clean and prepare the data. 4. Calculate summary statistics. 5. Create meaningful visualizations. 6. Explain the findings. The submission should include a report and supporting code.",
+        "word_count": 57
+    },
+    {
+        "document_id": "DOC005",
+        "chunk_id": "DOC005_C01",
+        "title": "AI Project Submission Instructions",
+        "category": "assignment_instructions",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Assignment: Artificial Intelligence Project Students must identify a problem that can be addressed using AI. The project report should explain the problem, objectives, dataset, methodology, technology choices and evaluation approach. Students should provide supporting implementation files and describe the limitations of their solution. All project claims should be supported by actual work and evidence.",
+        "word_count": 54
+    },
+    {
+        "document_id": "DOC006",
+        "chunk_id": "DOC006_C01",
+        "title": "Presentation Submission Guide",
+        "category": "assignment_instructions",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Assignment: Project Presentation Students must prepare a presentation describing their project. Suggested sections include: 1. Project introduction. 2. Problem statement. 3. Objectives. 4. Proposed solution. 5. Technology and methodology. 6. Results and conclusions. Slides should be readable and information should be presented in a clear and organized manner.",
+        "word_count": 48
+    },
+    {
+        "document_id": "DOC007",
+        "chunk_id": "DOC007_C01",
+        "title": "How should I submit an assignment?",
+        "category": "student_faqs",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Question: How should I submit an assignment? Answer: Follow the submission instructions provided with the specific assignment. Check the required file format and upload your completed work through the designated submission platform. Question: Should I check my submission? Answer: Yes. Confirm that the correct file has been uploaded and that the submission status is visible.",
+        "word_count": 55
+    },
+    {
+        "document_id": "DOC008",
+        "chunk_id": "DOC008_C01",
+        "title": "What should a project report contain?",
+        "category": "student_faqs",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Question: What should a project report contain? Answer: A typical project report includes an introduction, problem statement, objectives, methodology, implementation, results, limitations and conclusion. Question: Should I include references? Answer: Yes. Include references for external sources used in your project.",
+        "word_count": 40
+    },
+    {
+        "document_id": "DOC009",
+        "chunk_id": "DOC009_C01",
+        "title": "What is exploratory data analysis?",
+        "category": "student_faqs",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Question: What is exploratory data analysis? Answer: Exploratory data analysis, also called EDA, is the process of examining a dataset to understand its structure, quality, distributions and relationships. Question: Which tools can be used? Answer: Python libraries such as Pandas, Matplotlib and Seaborn are commonly used for data analysis and visualization.",
+        "word_count": 51
+    },
+    {
+        "document_id": "DOC010",
+        "chunk_id": "DOC010_C01",
+        "title": "Academic Integrity Guidelines",
+        "category": "policies",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Sample Academic Integrity Guidelines Students should submit original work and acknowledge external sources appropriately. Copying another person's work without attribution is not acceptable. Students should follow the academic integrity requirements published by their own educational institution. This is a synthetic example and is not an official policy.",
+        "word_count": 47
+    },
+    {
+        "document_id": "DOC011",
+        "chunk_id": "DOC011_C01",
+        "title": "Sample Assignment Extension Guidelines",
+        "category": "policies",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Sample Assignment Extension Guidelines Students who need additional time should contact the appropriate course coordinator or academic support team. Any extension request should follow the institution's official process and applicable deadlines. Approval is not automatic and depends on the applicable rules. This is a synthetic example and is not an official policy.",
+        "word_count": 52
+    },
+    {
+        "document_id": "DOC012",
+        "chunk_id": "DOC012_C01",
+        "title": "Sample Student Support Guidelines",
+        "category": "policies",
+        "source_type": "synthetic",
+        "chunk_index": 1,
+        "content": "Sample Student Support Guidelines Students may contact academic support services for help with course requirements, learning resources and assignment instructions. Students should use official institutional communication channels for personal or confidential matters. This is a synthetic example and is not an official policy.",
+        "word_count": 43
+    }
+]

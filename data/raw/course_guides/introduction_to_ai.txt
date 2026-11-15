@@ -1,0 +1,9 @@
+Course: Introduction to Artificial Intelligence
+
+This course introduces artificial intelligence concepts and applications.
+
+Topics include machine learning, neural networks, natural language
+processing, computer vision and responsible AI.
+
+Students explore how AI systems learn from data and how they
+can be evaluated for accuracy, reliability and fairness.

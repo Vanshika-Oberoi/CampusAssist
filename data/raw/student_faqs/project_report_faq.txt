@@ -1,0 +1,10 @@
+Question: What should a project report contain?
+
+Answer: A typical project report includes an introduction,
+problem statement, objectives, methodology, implementation,
+results, limitations and conclusion.
+
+Question: Should I include references?
+
+Answer: Yes. Include references for external sources
+used in your project.

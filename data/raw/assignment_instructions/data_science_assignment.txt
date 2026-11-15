@@ -1,0 +1,14 @@
+Assignment: Data Science Analysis
+
+Students must select a suitable dataset and perform exploratory
+data analysis.
+
+Required activities:
+1. Describe the dataset and its source.
+2. Identify missing and duplicate values.
+3. Clean and prepare the data.
+4. Calculate summary statistics.
+5. Create meaningful visualizations.
+6. Explain the findings.
+
+The submission should include a report and supporting code.

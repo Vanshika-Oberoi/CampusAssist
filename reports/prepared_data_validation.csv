@@ -1,0 +1,14 @@
+check,status,observed_result,details
+Unique metadata document IDs,PASS,12,Every source document should have a unique ID.
+Unique source filenames,PASS,12,Each source filename should appear only once in metadata.
+Missing metadata values,PASS,0,Checks for missing values across metadata columns.
+Cleaned document ID coverage,PASS,12 cleaned IDs / 12 metadata IDs,Every metadata document should have a corresponding cleaned document.
+Chunk document references,PASS,12,Every chunk should refer to an existing cleaned document.
+Unique chunk IDs,PASS,12,Each generated chunk should have a unique identifier.
+Empty cleaned documents,PASS,0,Cleaned documents should contain readable text.
+Cleaned document word counts,PASS,0,Stored word counts should match the actual content.
+Chunk word counts,PASS,0,Stored chunk word counts should match the actual chunk content.
+Unique evaluation question IDs,PASS,15,Every evaluation question should have a unique ID.
+Evaluation source document references,PASS,0,Every answerable question should reference an existing document ID.
+Unanswerable question source IDs,PASS,0,Unanswerable questions should not be assigned a supporting document.
+Evaluation question completeness,PASS,0,"Questions, reference answers and expected behaviors should be present."

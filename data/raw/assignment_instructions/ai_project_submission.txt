@@ -1,0 +1,11 @@
+Assignment: Artificial Intelligence Project
+
+Students must identify a problem that can be addressed using AI.
+
+The project report should explain the problem, objectives,
+dataset, methodology, technology choices and evaluation approach.
+
+Students should provide supporting implementation files
+and describe the limitations of their solution.
+
+All project claims should be supported by actual work and evidence.
