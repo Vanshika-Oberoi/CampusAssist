@@ -16,3 +16,11 @@ env/
 
 # VS Code workspace settings
 .vscode/
+
+# Environment variables and deployment secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Logs
+*.log
