@@ -1,0 +1,11 @@
+{
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dimensions": 384,
+    "tfidf_ngram_range": [
+        1,
+        2
+    ],
+    "similarity_metric": "cosine_similarity",
+    "document_count": 12,
+    "evaluation_question_count": 15
+}
