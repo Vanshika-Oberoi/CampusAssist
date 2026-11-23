@@ -66,7 +66,22 @@ def retrieve_documents(question, model_name, top_k):
             convert_to_numpy=True,
             normalize_embeddings=True
         )
-        scores = np.dot(query_embedding, document_embeddings.T)[0]
+
+        title_embeddings = model.encode(
+            documents["title"].astype(str).tolist(),
+            convert_to_numpy=True,
+            normalize_embeddings=True
+        )
+
+        content_scores = np.dot(
+            query_embedding, document_embeddings.T
+        )[0]
+
+        title_scores = np.dot(
+            query_embedding, title_embeddings.T
+        )[0]
+
+        scores = 0.5 * content_scores + 0.5 * title_scores
 
     ranked_indices = np.argsort(scores)[::-1][:top_k]
 
