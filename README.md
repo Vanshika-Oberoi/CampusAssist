@@ -116,12 +116,29 @@ CampusAssist/
 
 ## 8. Documentation
 
+### Final Capstone Deliverables
+
+- [Final Capstone Project Report](docs/FINAL_CAPSTONE_REPORT.md)
+- [Executive Project Summary](docs/presentation/EXECUTIVE_SUMMARY.md)
+- [Final Project Presentation](docs/presentation/CampusAssist_Module_7_Presentation.pptx)
+- [Live Demonstration Script](docs/presentation/DEMO_SCRIPT.md)
+- [Reflection and Lessons Learned](docs/reflection/REFLECTION_AND_LESSONS_LEARNED.md)
+
+### Technical Documentation
+
+- [Test Plan](docs/TEST_PLAN.md)
+- [Testing and Validation Report](docs/TESTING_AND_VALIDATION_REPORT.md)
+- [Test Results](docs/testing/TEST_RESULTS.md)
+- [Security Review Report](docs/testing/SECURITY_REVIEW_REPORT.md)
+- [Solution Optimization Report](docs/SOLUTION_OPTIMIZATION_REPORT.md)
+- [User Guide](docs/USER_GUIDE.md)
 - [Cloud Architecture Document](docs/CLOUD_ARCHITECTURE.md)
 - [Cloud Deployment Report](docs/deployment/CLOUD_DEPLOYMENT_REPORT.md)
 - [Deployment Guide](docs/deployment/DEPLOYMENT_GUIDE.md)
 - [System Integration Report](docs/SYSTEM_INTEGRATION_REPORT.md)
 - [End-to-End Integration Architecture](docs/diagrams/07_end_to_end_integration.mmd)
-- Architecture diagrams are available in `docs/diagrams/`.
+
+Architecture diagrams are available in `docs/diagrams/`. Evaluation and performance evidence is available in `reports/`.
 
 ## 9. Cloud Deployment
 

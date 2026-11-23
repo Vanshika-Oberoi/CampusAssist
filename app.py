@@ -49,6 +49,16 @@ def load_document_embeddings():
     return np.load(DOCUMENT_EMBEDDINGS)
 
 
+@st.cache_data
+def load_title_embeddings(titles):
+    model = load_semantic_model()
+    return model.encode(
+        list(titles),
+        convert_to_numpy=True,
+        normalize_embeddings=True
+    )
+
+
 def retrieve_documents(question, model_name, top_k):
     documents = load_documents()
     contents = documents["content"].astype(str).tolist()
@@ -67,10 +77,8 @@ def retrieve_documents(question, model_name, top_k):
             normalize_embeddings=True
         )
 
-        title_embeddings = model.encode(
-            documents["title"].astype(str).tolist(),
-            convert_to_numpy=True,
-            normalize_embeddings=True
+        title_embeddings = load_title_embeddings(
+            tuple(documents["title"].astype(str).tolist())
         )
 
         content_scores = np.dot(
