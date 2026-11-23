@@ -119,6 +119,8 @@ CampusAssist/
 - [Cloud Architecture Document](docs/CLOUD_ARCHITECTURE.md)
 - [Cloud Deployment Report](docs/deployment/CLOUD_DEPLOYMENT_REPORT.md)
 - [Deployment Guide](docs/deployment/DEPLOYMENT_GUIDE.md)
+- [System Integration Report](docs/SYSTEM_INTEGRATION_REPORT.md)
+- [End-to-End Integration Architecture](docs/diagrams/07_end_to_end_integration.mmd)
 - Architecture diagrams are available in `docs/diagrams/`.
 
 ## 9. Cloud Deployment

@@ -1,0 +1,33 @@
+flowchart TD
+    A["Raw Synthetic Documents<br/>12 TXT Files + Metadata"] --> B["Data Preparation Pipeline<br/>scripts/prepare_data.py"]
+    B --> C["Cleaned Documents"]
+    B --> D["Feature Engineered Data"]
+    B --> E["Document Chunks<br/>CSV + JSON"]
+
+    E --> F["Model Training Pipeline<br/>scripts/train_retrieval_models.py"]
+    Q["Evaluation Questions"] --> F
+
+    F --> G["TF-IDF Artifacts<br/>Vectorizer + Document Vectors"]
+    F --> H["Semantic Embeddings<br/>384-dimensional vectors"]
+    F --> I["Evaluation Reports<br/>Metrics + Comparisons"]
+
+    E --> J["Streamlit Application<br/>app.py"]
+    G --> J
+    H --> J
+
+    J --> K{"User Selects Retrieval Model"}
+    K --> L["TF-IDF Retrieval"]
+    K --> M["Sentence Transformers Retrieval"]
+
+    L --> N["Ranked Document Chunks"]
+    M --> N
+    N --> O["Streamlit Results Interface<br/>Top-K + Similarity Scores"]
+
+    O --> P["User Reviews Retrieved Content"]
+
+    J --> R["Streamlit Community Cloud"]
+
+    style A fill:#e8f0fe,stroke:#4285f4
+    style J fill:#e6f4ea,stroke:#188038
+    style O fill:#e6f4ea,stroke:#188038
+    style P fill:#fff4e5,stroke:#e69500
