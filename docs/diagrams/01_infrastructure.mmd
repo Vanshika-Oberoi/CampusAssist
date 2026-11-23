@@ -1,0 +1,15 @@
+flowchart TB
+    U[Student / User]
+    B[Web Browser]
+    S[Streamlit Community Cloud]
+    A[CampusAssist Streamlit App]
+    G[GitHub Repository - main]
+    D[CSV Document Data]
+    M[Model Artifacts]
+
+    U --> B
+    B --> S
+    S --> A
+    G -->|Source code and deployment| S
+    A --> D
+    A --> M

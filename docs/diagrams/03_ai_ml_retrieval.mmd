@@ -1,0 +1,29 @@
+flowchart TD
+    Q[User Query]
+    S{Retrieval Model}
+    T[TF-IDF Vectorizer]
+    TV[Stored TF-IDF Document Vectors]
+    ST[Sentence Transformer Model]
+    TE[Stored Content Embeddings]
+    TI[Generate Document Title Embeddings]
+    CS[Content Similarity]
+    TS[Title Similarity]
+    COMB[Combined Score: 0.5 Title + 0.5 Content]
+    R[Rank Documents]
+    O[Top-k Retrieved Documents]
+
+    Q --> S
+    S -->|TF-IDF| T
+    T --> TV
+    TV --> R
+    S -->|Semantic| ST
+    ST --> TE
+    ST --> TI
+    Q --> ST
+    ST --> CS
+    TE --> CS
+    TI --> TS
+    CS --> COMB
+    TS --> COMB
+    COMB --> R
+    R --> O

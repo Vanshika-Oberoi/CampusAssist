@@ -1,0 +1,25 @@
+flowchart TB
+    UI[Streamlit User Interface]
+    SETTINGS[Model Selector and Top-k Setting]
+    INPUT[Question Input and Validation]
+    LOGIC[Retrieval Function]
+    TF[TF-IDF Loader]
+    SEM[Sentence Transformer Loader]
+    DATA[Document CSV Loader]
+    EMB[Embedding Loader]
+    RANK[Ranking and Result Formatting]
+    DISPLAY[Retrieved Document Display]
+
+    UI --> SETTINGS
+    UI --> INPUT
+    SETTINGS --> LOGIC
+    INPUT --> LOGIC
+    LOGIC --> TF
+    LOGIC --> SEM
+    LOGIC --> DATA
+    LOGIC --> EMB
+    TF --> RANK
+    SEM --> RANK
+    DATA --> RANK
+    EMB --> RANK
+    RANK --> DISPLAY

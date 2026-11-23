@@ -1,0 +1,18 @@
+flowchart TD
+    USER[User]
+    APP[CampusAssist Application]
+    VALIDATE[Input Validation]
+    LIMIT[1000 Character Query Limit]
+    DATA[Synthetic Document Dataset]
+    SECRETS[Secret File Exclusion via gitignore]
+    LOGS[Streamlit Cloud Application Logs]
+
+    USER --> APP
+    APP --> VALIDATE
+    VALIDATE --> LIMIT
+    LIMIT --> DATA
+    APP --> LOGS
+    SECRETS -. Repository protection rule .-> APP
+
+    NOTE[Authentication, RBAC and advanced security monitoring are not implemented]
+    APP -. Current limitation .-> NOTE

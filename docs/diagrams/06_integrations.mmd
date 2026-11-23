@@ -1,0 +1,16 @@
+flowchart LR
+    DEV[Developer]
+    GH[GitHub Repository]
+    SC[Streamlit Community Cloud]
+    APP[CampusAssist App]
+    HF[Hugging Face Model Hub]
+    USER[Student Browser]
+    DATA[Repository Data and Model Artifacts]
+
+    DEV -->|Push commits| GH
+    GH -->|Deployment source| SC
+    SC --> APP
+    APP -->|Load data and artifacts| DATA
+    APP -->|Load pretrained model| HF
+    USER -->|HTTPS access| APP
+    APP -->|Ranked results| USER
